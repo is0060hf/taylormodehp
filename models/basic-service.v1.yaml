@@ -1,0 +1,19 @@
+title: 基本サービス
+type: object
+x-tags:
+  - information
+properties:
+  iconInfoStr:
+    type: string
+    description: アイコン情報
+  basicServiceName:
+    type: string
+    description: 基本サービスの名称
+  basicServiceBody:
+    type: string
+    description: 基本サービスの概要
+required:
+  - iconInfoStr
+  - basicServiceName
+  - basicServiceBody
+description: 株式会社TaylorModeが提供するサービスに紐づく基本サービス

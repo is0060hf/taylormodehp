@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: 会社情報関連
+  version: '1.0'
+  contact:
+    name: Yuya Kato
+    url: 'https://taylormode.co.jp'
+    email: ykto@taylormode.co.jp
+  description: 株式会社TaylorModeに関する情報を取得するためのAPI
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /services:
+    get:
+      summary: サービス一覧取得
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  serviceList:
+                    type: array
+                    items:
+                      $ref: ../models/services.v1.yaml
+              examples: {}
+          headers: {}
+      operationId: get-services
+      description: 株式会社TaylorModeが提供するサービスの一覧を取得する
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  '/services/{serviceKey}':
+    parameters:
+      - schema:
+          type: string
+        name: serviceKey
+        in: path
+        required: true
+        description: サービスを識別するためのキー情報
+    get:
+      summary: サービス詳細情報取得
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  serviceInfo:
+                    $ref: ../models/services.v1.yaml
+                  plans:
+                    type: array
+                    items:
+                      $ref: ../models/plans.v1.yaml
+                  basicServices:
+                    type: array
+                    items:
+                      $ref: ../models/basic-service.v1.yaml
+      operationId: get-services-serviceKey
+      description: 株式会社TaylorModeが提供するサービスの詳細情報を取得する
+components:
+  schemas: {}
+  securitySchemes: {}

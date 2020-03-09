@@ -1,0 +1,28 @@
+title: 提供サービス
+type: object
+x-tags:
+  - information
+x-examples: {}
+description: 株式会社TaylorModeが提供するサービス情報を格納するためのテーブル
+properties:
+  id:
+    type: string
+    format: uuid
+  serviceName:
+    type: string
+  serviceKey:
+    type: string
+  headerImage:
+    type: string
+  featureImage:
+    type: string
+  tag:
+    type: string
+  route:
+    type: string
+  heading:
+    type: string
+  body:
+    type: string
+  wrapUp:
+    type: string

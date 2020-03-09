@@ -1,0 +1,23 @@
+title: 料金プラン
+type: object
+x-tags:
+  - information
+properties:
+  planName:
+    type: string
+    description: プラン名
+  price:
+    type: string
+    description: 価格
+  priceTerm:
+    type: string
+    description: 期間
+  serviceContent:
+    type: array
+    description: サービス内容
+    items:
+      type: string
+required:
+  - planName
+  - price
+description: 株式会社TaylorModeが提供するサービスに紐づく料金情報
